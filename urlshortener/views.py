@@ -9,7 +9,7 @@ from django.contrib import messages
 def Index(request):
     BASE_URL = request.get_raw_uri()
     
-    url = Url.objects.filter(user = request.user)[3:]
+    url = Url.objects.all()[3:]
     
     form = UrlForm()
     if request.method == 'POST':
@@ -38,7 +38,7 @@ def Index(request):
 
 def UrlList(request):
 
-    url = Url.objects.filter(user = request.user)
+    url = Url.objects.all()
 
     context = {}
 
