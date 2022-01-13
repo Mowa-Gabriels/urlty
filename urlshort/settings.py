@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +25,7 @@ SECRET_KEY = 'fjn3o_xl0fvprnwysob8d1mlxx@aw6961td1dv)6911@c@-*hr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '127.0.0.1', 'urlty.herokuapp.com', 'urlty2.herokuapp.com']
+ALLOWED_HOSTS = [ '127.0.0.1', 'urlty.herokuapp.com']
 
 
 # Application definition
@@ -81,15 +79,10 @@ WSGI_APPLICATION = 'urlshort.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'da735skd9kc51i',
-        'USER': 'rlradnsjhxcduv',
-        'PASSWORD': '3a8ae5f5799224af5e4f82d853e48bf67a3be51e76b2da7492e9cd670a49ac1d',
-        'HOST': '@ec2-34-226-134-154.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 
 # Password validation
@@ -138,5 +131,6 @@ STATICFILES_DIRS = [
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
+if os.getcwd() == '/app':
+    DEBUG=False
 
