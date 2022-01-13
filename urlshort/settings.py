@@ -25,7 +25,7 @@ SECRET_KEY = 'fjn3o_xl0fvprnwysob8d1mlxx@aw6961td1dv)6911@c@-*hr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '127.0.0.1', 'urlty.herokuapp.com']
+ALLOWED_HOSTS = [ '127.0.0.1', 'urlty.herokuapp.com', 'urlty2.herokuapp.com']
 
 
 # Application definition
@@ -131,4 +131,6 @@ STATICFILES_DIRS = [
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+if os.getcwd() == '/app':
+    DEBUG=False
 
