@@ -137,6 +137,3 @@ STATICFILES_DIRS = [
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-if os.getcwd() == '/app':
-    DEBUG=False
-
